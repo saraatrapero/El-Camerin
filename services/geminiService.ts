@@ -12,7 +12,8 @@ Tu objetivo es ayudar a los visitantes y peregrinos a conocer mejor el Santuario
 
 export async function getAssistantResponse(prompt: string) {
   try {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+    // Initializing the GenAI client with named parameter and direct environment variable access
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: prompt,
@@ -22,6 +23,7 @@ export async function getAssistantResponse(prompt: string) {
       },
     });
 
+    // Accessing .text property directly as specified in the guidelines
     return response.text || "Lo siento, no he podido procesar tu solicitud en este momento.";
   } catch (error) {
     console.error("Gemini API Error:", error);
