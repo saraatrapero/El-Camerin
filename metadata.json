@@ -1,0 +1,8 @@
+{
+  "name": "Virgen de la Cabeza - Santuario Virtual",
+  "description": "A comprehensive digital experience dedicated to the Virgen de la Cabeza, featuring history, pilgrimage details, and a Gemini-powered virtual guide to answer questions about the tradition and the Shrine.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
